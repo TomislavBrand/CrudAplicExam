@@ -1,0 +1,28 @@
+﻿@* namespace CrudAplicExam.Views.Products
+{
+    public class Delete
+    {
+    }
+} *@
+
+@model CrudAplicExam.Models.Product
+
+<h2>Изтриване на продукт</h2>
+
+<div class="alert alert-danger">
+    Сигурни ли сте, че искате да изтриете този продукт?
+</div>
+
+<dl class="row">
+    <dt class="col-sm-2">Име</dt>
+    <dd class="col-sm-10">@Model.Name</dd>
+
+    <dt class="col-sm-2">Цена</dt>
+    <dd class="col-sm-10">@Model.Price лв.</dd>
+</dl>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Изтрий</button>
+    <a asp-action="Index" class="btn btn-secondary">Отказ</a>
+</form>
